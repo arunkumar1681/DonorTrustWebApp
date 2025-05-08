@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="css/styles1.css" rel="stylesheet">
+    <title>Trust Login/SignUp</title>
+    <link rel="icon" type="image/png" href="logo.jpeg">
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            right: 290px; 
+            transform: translateY(-50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+            width: 300px;
+        }
+
+        .popup-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+
+        .popup-content input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+        }
+
+        .phone-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #verify-button {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        #contact {
+            padding-left: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form id="trustSignupForm">
+                <h1>Trust Create Account</h1>
+                
+                <input type="text" id="trustName" name="trust-name" placeholder="Trust Name" required>
+                <input type="text" id="trustId" name="trust-id" placeholder="Trust ID" required>
+                <input type="email" id="trustEmail" placeholder="Trust Email">
+                <input type="password" id="trustPassword" name="trust-password" placeholder="Password" required>
+                <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+                <div class="phone-container">
+                    <input type="tel" id="contact" placeholder="Contact No." required>
+                    <button type="button" id="verify-button">Verify</button>
+                </div>
+                <label for="trustLicence">Upload Trust Licence (PDF/DOC):</label>
+                <input type="file" name="trust-licence" id="trust-licence" accept=".pdf,.doc,.docx" required>
+
+                <button type="submit" id="signup-submit">Sign Up</button>
+            </form>
+        </div>
+        <div id="otp-popup" class="popup">
+            <div class="popup-content">
+                <h2>Enter OTP</h2>
+                <input type="text" id="otp-code" placeholder="Enter OTP">
+                <button id="submit-otp">Submit</button>
+                <button id="close-popup">Close</button>
+            </div>
+        </div>
+
+        <div class="form-container sign-in">
+            <form id="trustLoginForm">
+                <h1>Trust Sign In</h1>
+                
+                <input type="email" id="loginEmail" placeholder="Trust Email">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <a href="#">Forget Your Password?</a>
+                <button type="submit" >Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script src="/js/trust.js"></script>
+
+</body>
+
+</html>

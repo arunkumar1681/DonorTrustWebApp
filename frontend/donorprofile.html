@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Profile | CareShare</title>
+    <link rel="icon" type="image/png" href="logo.jpeg">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/donorpfstyle.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h2>Donor Profile</h2>
+        <input type="file" id="uploadPhoto" class="hidden" accept="image/*" onchange="uploadProfilePhoto(event)">
+        <img src="profile-placeholder.jpeg" class="profile-photo" id="profileImage" onclick="document.getElementById('uploadPhoto').click()">
+
+        
+        <div class="profile-info">
+            <div class="info-item">
+                <strong>Name:</strong> <span id="nameText">Loading...</span>
+                <button class="edit-btn" onclick="openPopup('name')">Change</button>
+            </div>
+            <div class="info-item">
+                <strong>Email:</strong> <span id="emailText">Loading...</span>
+                <button class="edit-btn" onclick="openPopup('email')">Change</button>
+            </div>
+            <div class="info-item">
+                <strong>Contact:</strong> <span id="contactNoText">Loading...</span>
+                <button class="edit-btn" onclick="openPopup('contactNo')">Change</button>
+            </div>
+            <div class="info-item">
+                <strong>Location:</strong> <span id="locationText">Loading...</span>
+                <button class="edit-btn" onclick="openPopup('location')">Change</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="editPopup">
+        <h3>Edit <span id="editFieldName"></span></h3>
+        <input type="text" id="editInput">
+        <div class="popup-buttons">
+            <button class="save-btn" onclick="saveProfile()">Save</button>
+            <button class="cancel-btn" onclick="closePopup()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="js/donorpfjs.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

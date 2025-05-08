@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now - CareShare</title>
+    <link rel="icon" type="image/png" href="logo.jpeg">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e0f8d8;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #32a852, #2d8a46);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffdd57;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background: #ffdd57;
+            color: black;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2d8a46;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        select,
+        textarea,
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: border 0.3s ease-in-out;
+        }
+
+        select:focus,
+        textarea:focus,
+        input:focus {
+            border-color: #2d8a46;
+            outline: none;
+        }
+
+        .image-preview {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            display: none;
+            margin: 10px 0;
+            object-fit: cover;
+            border: 2px solid #ddd;
+        }
+
+        .post-btn {
+            background-color: #ff5733;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .post-btn:hover {
+            background-color: #d84315;
+        }
+
+        #successMessage {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 18px;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            background: #e0ffe0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Care<span style="color:white;">Share</span></div>
+        <div class="nav-links">
+            <a href="donorhistory.html">My Donations</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <form id="donationForm">
+            <h2>Donate Now</h2>
+
+            <label for="donationType">Choose Donation Type:</label>
+            <select id="donationType">
+                <option value="Food">Food</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Education Material">Educational Material</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <label for="donationPhoto">Upload Donation Photo:</label>
+            <input type="file" id="donationPhoto" accept="image/*" onchange="previewImage(event)">
+            <img id="imagePreview" class="image-preview">
+
+            <label for="donationDescription">Description:</label>
+            <textarea id="donationDescription" rows="3" placeholder="Enter donation details..."></textarea>
+
+            <label for="donationQuantity">Quantity:</label>
+            <input type="text" id="donationQuantity" placeholder="Enter quantity" min="1">
+
+            <label for="donationLocation">Location:</label>
+            <input type="text" id="donationLocation" placeholder="Enter your location">
+
+            <button class="post-btn">Post Donation</button>
+
+            <div id="successMessage">Donation posted successfully!</div>
+        </form>
+
+    </div>
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function () {
+                    const imgElement = document.getElementById("imagePreview");
+                    imgElement.src = reader.result;
+                    imgElement.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+    <script src="js/donordonation.js" type="module"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor History</title>
+    <link rel="icon" type="image/png" href="logo.jpeg">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e3ffe7, #d9e7ff);
+            text-align: center;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #2a1757, #1d0637);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffdd57;
+            text-transform: uppercase;
+            margin-left: 20px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 80px auto 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: linear-gradient(90deg, #2a1757, #1d0637);
+            color: white;
+        }
+
+        .pending {
+            color: red;
+            font-weight: bold;
+        }
+
+        .accepted {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Care<span style="color:white;">Share</span></div>
+    </div>
+
+    <div class="container">
+        <h2>Donor History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Donation Type</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Trust Name</th>
+                    <th>Trust Contact</th>
+                </tr>
+            </thead>
+            <tbody id="donationHistory">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/donor-history.js"></script>
+</body>
+</html>
+
